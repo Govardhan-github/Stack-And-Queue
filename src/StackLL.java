@@ -38,7 +38,22 @@ public void enQueue(int myNode) {
 	}
 	length++;
 	
+}
+/*
+ * Declaring deQueue Method 
+ * To Delete Nodes In MyQueue
+ */
+public int deQueue() {
+	//Check If Condition To Front Is Null Or Not
+	if(front != null) {
+		int result = front.myNode;//Storing front.myNode Value In Result
+		front=front.next;//front.next Is Pointing To Front
+		length--;
+		return result;//Returning result
+		}
+		return length;//Returning length
 	}
+
 /*
  *Declaring Size Method
  *To Find The Size Of MyQueue 

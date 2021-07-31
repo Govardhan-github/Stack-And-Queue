@@ -9,6 +9,8 @@ public static void main(String[] args) {
 	myQueue.enQueue(70);//Inserting Node 70 Into myQueue
 	System.out.println("size Of My Queue is : " +myQueue.size());//Calling Size Method To Display The Size Of MyQueue
 	myQueue.displayQueue();//Calling The DisplayQueue Method To Display Nodes
-	
+	System.out.println("dequee Of Node Is : " +myQueue.deQueue());//Calling DeQueue Method To Delete The  Nodes
+	System.out.println("size Of My Queue is : " +myQueue.size());//Calling Size Method To Display The Size Of MyQueue
+	myQueue.displayQueue();//Calling The DisplayQueue Method To Display Nodes
 }
 }
