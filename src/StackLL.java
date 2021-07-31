@@ -13,62 +13,50 @@ class Node{
 }
 //Declaring Main StackLL Class
 public class StackLL {
-	private Node head;
+	private Node front;//Defining front Node
+	private Node rear;//Defining rear Node
+	private int length;//Defining Length 
 	/*
 	 * Declaring StackLL Constructor
-	 * To Initialize The head
+	 * To Initialize The front
 	 */
 	public StackLL() {
-		this.head =null;
+		this.front =null;
 	}
 	/*
-	 * Declaring Push Method 
-	 * To Push Nodes Into My Stack
+	 * Declaring enQueue Method 
+	 * To Insert Nodes Into My Queue
 	 */
-public void push(int myNode) {
-	Node newNode = new Node(myNode);//Storing The myNode Value in newNode
-	newNode.next = this.head;//newNode.next Pointing To This.head
-	this.head = newNode;//Storing newNode Value In This.head And Pointing To Next Node 
+public void enQueue(int myNode) {
+	if(front == null) {
+	rear = new Node(myNode);//Storing The myNode Value In  rear
+	front = rear;//Pointing rear Value To Front
 	}
-	/*
-	* Declaring Display Method
-	* To Display The Nodes In My Stack
-	*/
-public void display() {
-    System.out.println("My Stack Is :");//Print Statement To Print My Stack
-    //If Head Is Null And Print The Stack Is empty
-	if(this.head == null) {
-	System.out.println("Stack is empty");
+	else {
+		rear.next =new Node(myNode);//Storing myNode In rear.next
+		rear = rear.next;//rear.next Is Pointing To rear
 	}
-	Node temp = this.head;//This.head Value Stored In Temp 
-	//While Condition To Traverse The Nodes In Stack
-	while(temp!=null) {
-	System.out.println(temp.myNode);
-	temp = temp.next;
-	}//End Of While Loop
+	length++;
+	
+	}
+/*
+ *Declaring Size Method
+ *To Find The Size Of MyQueue 
+ */
+public int size() {
+	return length;
 }
+
 /*
- * Declaring Peak Method 
- * To Print Top Element Of My Stack
- */
-public int peak() {
-	//If this.head Is Null Print The Stack Is Empty
-	if(this.head == null) {
-		System.out.println("Stack is empty");
-	}
-	return this.head.myNode;//Return The This.Head.MyNode
-	}
-/*
- * Declaring Pop Method 
- * To Delete Nodes In Stack
- */
-public int pop() {
-	//If this.head Is Null Print The Stack Is Empty
-		if(this.head == null) {
-			System.out.println("Stack is empty");
+* Declaring DisplayQueue Method
+* To Display The Nodes In My Queue
+*/
+public void displayQueue() {
+	Node currentNode = front;//front Value Is Stored In CurrentNode
+	//While Condition To Traverse The Nodes To Display
+	while(currentNode != null) {
+		System.out.println(currentNode.myNode);
+		currentNode= currentNode.next;//CurrentNode.next Is Pointing To CurrentNode
 		}
-	Node temp = head;//this.head Value Stored In Temp 
-	this.head = this.head.next;//Head Points To Head.Next
-	return temp.myNode;//Return The Temp.myNode
 	}
 }
