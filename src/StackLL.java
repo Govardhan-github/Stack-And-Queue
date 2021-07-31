@@ -3,8 +3,8 @@ class Node{
 	int myNode;//Declaring MyNode Variable
 	Node next;//Declaring Node Next Value
 	/*
-	 * Declaring Parameterised Constructor
-	 * To Intialise The myNode And Next Values
+	 * Declaring Parameterized Constructor
+	 * To Initialize The myNode And Next Values
 	 */
 	public Node(int myNode) {
 		this.myNode=myNode;
@@ -16,7 +16,7 @@ public class StackLL {
 	private Node head;
 	/*
 	 * Declaring StackLL Constructor
-	 * To Intialise The head
+	 * To Initialize The head
 	 */
 	public StackLL() {
 		this.head =null;
@@ -45,6 +45,30 @@ public void display() {
 	while(temp!=null) {
 	System.out.println(temp.myNode);
 	temp = temp.next;
-		}//End Of While Loop
+	}//End Of While Loop
+}
+/*
+ * Declaring Peak Method 
+ * To Print Top Element Of My Stack
+ */
+public int peak() {
+	//If this.head Is Null Print The Stack Is Empty
+	if(this.head == null) {
+		System.out.println("Stack is empty");
+	}
+	return this.head.myNode;//Return The This.Head.MyNode
+	}
+/*
+ * Declaring Pop Method 
+ * To Delete Nodes In Stack
+ */
+public int pop() {
+	//If this.head Is Null Print The Stack Is Empty
+		if(this.head == null) {
+			System.out.println("Stack is empty");
+		}
+	Node temp = head;//this.head Value Stored In Temp 
+	this.head = this.head.next;//Head Points To Head.Next
+	return temp.myNode;//Return The Temp.myNode
 	}
 }
